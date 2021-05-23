@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="test"></p>
+
+    <script>
+      var thisIsATest = [];
+      var currentQuestionIndex = [];
+      var questions = [
+        {
+          q: "Will this finally work?",
+
+          answer1: "NO",
+          answer2: "Maybe",
+          answer3: " it would take an act of congress",
+          answer4: " Where am I?",
+
+          correct: "2",
+        },
+        {
+          q: "What is the air speed of an unladen swallow?",
+
+          answer1: "African or European",
+          answer2: "I...I don't know that!",
+          answer3: "blue! No wait!",
+          answer4: " What are you talking about?",
+
+          correct: "answer2",
+        },
+        {
+          q: "How do you know she is a witch?",
+          answer1: "Well she turned me into a newt!",
+          answer2: "Build a bridge out of her",
+          answer3: "see if she weighs the same as a duck",
+          answer4: "Burn her!!",
+
+          correct: "3",
+        },
+        {
+          q: "What is the air speed of an unladen swallow?",
+
+          answer1: "African or European",
+          answer2: "I...I don't know that!",
+          answer3: "blue! No wait!",
+          answer4: "What are you talking about?",
+
+          correct: "2",
+        },
+      ];
+      // var jumbled = [];
+      // var answerMix = [];
+      // for (i = 0; i < questions.length; i++) {
+      //   var scramble = Math.floor(Math.random() * questions.length);
+
+      //   jumbled.push(scramble);
+
+      //   console.log(jumbled);
+      // }
+
+      // for (i = 0; i < questions[2].length; i++) {
+      //   var switchItUp = Math.floor(Math.random() * 4);
+      //   answerMix.push(switchItUp);
+      // }
+      // console.log(questions[0].answers);
+      // var newQuestion = jumbled.pop(2);
+
+      // console.log(jumbled);
+      // console.log(questions[scramble]);
+      // console.log(answerMix);
+      // var jkl = document.write(questions[1].answer2);
+
+      // // document.write(questions.shift());
+      // var nope = JSON.stringify(questions[scramble]);
+      // var nope2 = JSON.parse(nope);
+      // console.log(nope);
+      // document.write(nope2);
+
+      // for (var a = [0, 1, 2, 3, 4], i = a.length; i--; ) {
+      //   var random = a.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+      //   console.log(random);
+      // };
+
+      var randomQuestions = [];
+
+      function genQuestions() {
+        // for (i = 0; i < questions.length; i++) randomQuestions.push(i);
+        // document.write(i);
+        var i = Math.floor(Math.random() * questions.length);
+        currentQuestionIndex.push(i);
+        randomQuestions.splice(i);
+      }
+
+      genQuestions();
+      var yat = JSON.stringify(randomQuestions);
+      var anotherTest = JSON.parse(yat);
+      var gimme = JSON.stringify(questions);
+      var gimmeNow = JSON.parse(gimme);
+      document.write(gimmeNow);
+      // thisIsATest.push(currentQuestionIndex);
+      console.log(thisIsATest);
+      // console.log("current Question Number: " + currentQuestionIndex);
+      document.write(questions.q);
+
+      var btn = document.createElement("button");
+      btn.innerHTML = "Test";
+      btn.onclick = function () {
+        console.log(questions);
+        if (questions.length === 0) {
+          document.write("Game Over");
+          prompt("You suck!");
+        } else {
+          questions.shift();
+          this.style.backgroundColor = "green";
+          console.log(questions.correct);
+        }
+      };
+      document.body.appendChild(btn);
+    </script>
+  </body>
+</html>
